@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Dashboard App
 
-## Getting Started
+## Overview
+This project is a Next.js-based dashboard application that displays website statistics and customer data. It uses randomly generated data to simulate real-world scenarios.
 
-First, run the development server:
+## Setup
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+1. Clone the repository:
+   ```
+   git clone https://github.com/nshutijonathan/dashboard-app.git
+   cd dashboard-app
+   ```
+
+2. Install dependencies:
+   ```
+   npm install
+   ```
+
+3. Run the development server:
+   ```
+   npm run dev
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
+
+5. Open [https://dashboard-app-rho-indol.vercel.app/](https://dashboard-app-rho-indol.vercel.app/) in your browser to view the hosted version of application.
+
+## Login Credentials
+
+**Important: Use these credentials to access the dashboard**
+
+```
+Username: admin
+Password: password
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+These credentials are for demonstration purposes only. In a production environment, secure authentication would be implemented.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Features
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Dashboard overview with key metrics
+- Website statistics page
+- Customer management page with search functionality
+- Simple login system (for demonstration purposes)
 
-## Learn More
+## Data Generation
 
-To learn more about Next.js, take a look at the following resources:
+Initially, the project was intended to use Mockaroo (https://mockaroo.com/) for data generation. However, due to persistent errors when attempting to access the Mockaroo API:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+// https://my.api.mockaroo.com/users.json?key=0eb3d310
+{
+  "error": "undefined method `file_format' for nil:NilClass"
+}
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+We switched to using the Faker library to generate random data locally. This approach ensures consistent data generation without relying on external APIs.
 
-## Deploy on Vercel
+## Authentication
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The current login system is a basic implementation for demonstration purposes. User credentials are stored in localStorage upon successful login. In a production environment, a more robust authentication system would be implemented, potentially including:
+- Secure password hashing
+- JWT token-based authentication
+- Server-side session management
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Future Improvements
+
+1. Implement a full-fledged REST API for data management
+2. Enhance authentication with proper security measures
+3. Add more detailed analytics and data visualization
+4. Implement real-time data updates
+
+## Technologies Used
+
+- Next.js
+- React
+- Tailwind CSS
+- Faker.js for data generation
+
+## Contributing
+
+Contributions to improve the dashboard or add new features are welcome. Please follow the standard fork-and-pull request workflow.
